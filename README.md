@@ -27,26 +27,29 @@ Acessando o Adminer para verificar os dados - http://localhost:5433
 *Observação:*
 Ativei o módulo PgCrypto no PostgreSQL para os criptografar dados PCI. Deixei a implementação comentada.
 
+
+Build do projeto
+---
+Fazendo o build da aplicação.
+
+    ./gradlew clean build
+
+
 Iniciando aplicação via terminal
 ---
 Para rodar a aplicação via terminal setando um profile.
 
     ./gradlew bootRun -Dspring.profiles.active=local
 
-Build do projeto
----
-Fazendo o build da aplicação. 
-
-    ./gradlew clean build
-
-Criar imagem docker do projeto
----
-No diretório raiz do projeto.
-
-    docker build .
-
 
 Acessando a documentação no Swagger
 ---
     http://localhost:8080/swagger-ui.html
+
+
+Criar imagem docker do projeto
+---
+Para criar a imagem do projeto, basta fazer o build rodando o comando já listado acima e depois executar o comando abaixo no diretório raiz do projeto.
+
+    docker build .
 
