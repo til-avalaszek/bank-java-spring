@@ -1,8 +1,8 @@
 package com.valaszek.bank.entrypoint;
 
 import com.valaszek.bank.entrypoint.request.TransactionRequest;
-import com.valaszek.bank.exception.AccountNotFountException;
-import com.valaszek.bank.exception.OperationTypeNotFound;
+import com.valaszek.bank.exception.AccountNotFoundException;
+import com.valaszek.bank.exception.OperationTypeNotFoundException;
 import com.valaszek.bank.transaction.TransactionService;
 import com.valaszek.bank.transaction.dto.TransactionDto;
 import org.slf4j.Logger;
@@ -38,7 +38,7 @@ public class TransactionResource {
       transactionService.create(transactionDto);
       LOGGER.info("r=SUCCESS {}", transactionRequest);
       return ResponseEntity.status(HttpStatus.CREATED).build();
-    } catch (AccountNotFountException | OperationTypeNotFound e) {
+    } catch (AccountNotFoundException | OperationTypeNotFoundException e) {
       return ResponseEntity.badRequest().build();
     }
   }

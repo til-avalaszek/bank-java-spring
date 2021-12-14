@@ -5,7 +5,7 @@ import com.valaszek.bank.account.dto.AccountDto;
 import com.valaszek.bank.account.model.AccountEntity;
 import com.valaszek.bank.entrypoint.request.AccountRequest;
 import com.valaszek.bank.entrypoint.response.AccountResponse;
-import com.valaszek.bank.exception.AccountNotFountException;
+import com.valaszek.bank.exception.AccountNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,7 +48,7 @@ public class AccountResource {
       AccountEntity account = accountService.findAccount(accountId);
       LOGGER.info("r=SUCCESS {}", accountId);
       return ResponseEntity.ok(AccountResponse.of(account));
-    } catch (AccountNotFountException e) {
+    } catch (AccountNotFoundException e) {
       return ResponseEntity.notFound().build();
     }
   }

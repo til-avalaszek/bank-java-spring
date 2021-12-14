@@ -3,7 +3,7 @@ package com.valaszek.bank.account;
 import com.valaszek.bank.account.dto.AccountDto;
 import com.valaszek.bank.account.model.AccountEntity;
 import com.valaszek.bank.account.repository.AccountRepository;
-import com.valaszek.bank.exception.AccountNotFountException;
+import com.valaszek.bank.exception.AccountNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -24,6 +24,6 @@ public class AccountService {
   }
 
   public AccountEntity findAccount(BigInteger id) {
-    return accountRepository.findById(id).orElseThrow(() -> new AccountNotFountException(id));
+    return accountRepository.findById(id).orElseThrow(() -> new AccountNotFoundException(id));
   }
 }

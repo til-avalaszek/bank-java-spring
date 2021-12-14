@@ -1,6 +1,6 @@
 package com.valaszek.bank.enums;
 
-import com.valaszek.bank.exception.OperationTypeNotFound;
+import com.valaszek.bank.exception.OperationTypeNotFoundException;
 
 public enum OperationType {
   COMPRA_A_VISTA(1),
@@ -23,6 +23,6 @@ public enum OperationType {
     for (OperationType e : values()) {
       if (e.id.equals(id)) return e;
     }
-    throw new OperationTypeNotFound(id);
+    throw new OperationTypeNotFoundException(id);
   }
 }
