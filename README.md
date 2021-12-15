@@ -1,8 +1,8 @@
 API - Bank Java Spring
 ---
 Projeto com Java, Spring, PostgreSQL, Lombok, Flyway e Docker.
-- Docker - para contenização
-- Flyway - para controlar das migrations de banco
+- Docker - utilizado para contenização as dependências e a aplicação
+- Flyway - migrations de banco são controladas automaticamente pelo Flyway
 
 *Observação:*
 Ativado o módulo PgCrypto no PostgreSQL para os criptografar dados PCI. Implementação do uso de criptografia na aplicação esta comentada.
@@ -39,9 +39,12 @@ Acessando o Adminer para verificar os dados - http://localhost:5433
 	
     server=database
 
-	usuario=bank
+	Username=bank
 
-	senha=bank
+	Password=bank
+
+    Database=bank
+
 
 2 - Caso não possível utilizar o comando make
 ---
