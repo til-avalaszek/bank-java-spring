@@ -46,7 +46,7 @@ Acessando o Adminer para verificar os dados - http://localhost:5433
     Database=bank
 
 
-2 - Caso não possível utilizar o comando make
+2 - Caso não for possível utilizar o comando make
 ---
 
 Build do aplicação
