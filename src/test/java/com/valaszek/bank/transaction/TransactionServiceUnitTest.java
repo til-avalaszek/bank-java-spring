@@ -1,9 +1,8 @@
-package com.valaszek.bank;
+package com.valaszek.bank.transaction;
 
 import com.valaszek.bank.account.AccountService;
 import com.valaszek.bank.account.model.AccountEntity;
 import com.valaszek.bank.exception.AccountNotFoundException;
-import com.valaszek.bank.transaction.TransactionService;
 import com.valaszek.bank.transaction.dto.TransactionDto;
 import com.valaszek.bank.transaction.repository.TransactionRepository;
 import org.junit.jupiter.api.Test;
@@ -24,6 +23,7 @@ import static org.mockito.Mockito.when;
 public class TransactionServiceUnitTest {
 
   private static final BigInteger ACCOUNT_ID = BigInteger.valueOf(1);
+  private static final String DOCUMENT_NUMBER = "692.265.440-42";
 
   @Mock private TransactionRepository transactionRepository;
 
@@ -59,9 +59,6 @@ public class TransactionServiceUnitTest {
   }
 
   private AccountEntity mockAccount() {
-    return AccountEntity.builder()
-        .accountId(ACCOUNT_ID)
-        .documentNumber("692.265.440-42")
-        .build();
+    return AccountEntity.builder().accountId(ACCOUNT_ID).documentNumber(DOCUMENT_NUMBER).build();
   }
 }

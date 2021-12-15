@@ -1,4 +1,4 @@
-package com.valaszek.bank;
+package com.valaszek.bank.account;
 
 import com.valaszek.bank.account.AccountService;
 import com.valaszek.bank.account.dto.AccountDto;
@@ -25,6 +25,7 @@ import static org.mockito.Mockito.when;
 public class AccountServiceUnitTest {
 
   private static final BigInteger ACCOUNT_ID = BigInteger.valueOf(1);
+  private static final String DOCUMENT_NUMBER = "692.265.440-42";
 
   @Mock private AccountRepository accountRepository;
 
@@ -60,11 +61,11 @@ public class AccountServiceUnitTest {
   }
 
   private AccountDto mockAccountDto() {
-    return AccountDto.builder().accountId(ACCOUNT_ID).documentNumber("692.265.440-42").build();
+    return AccountDto.builder().accountId(ACCOUNT_ID).documentNumber(DOCUMENT_NUMBER).build();
   }
 
   private Optional<AccountEntity> mockAccount() {
     return Optional.of(
-        AccountEntity.builder().accountId(ACCOUNT_ID).documentNumber("692.265.440-42").build());
+        AccountEntity.builder().accountId(ACCOUNT_ID).documentNumber(DOCUMENT_NUMBER).build());
   }
 }

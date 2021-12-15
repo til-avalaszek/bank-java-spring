@@ -1,5 +1,6 @@
-package com.valaszek.bank;
+package com.valaszek.bank.entrypoint;
 
+import com.valaszek.bank.IntegrationTest;
 import com.valaszek.bank.account.dto.AccountDto;
 import com.valaszek.bank.account.model.AccountEntity;
 import com.valaszek.bank.account.repository.AccountRepository;
@@ -25,12 +26,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 
 public class AccountResourceTest extends IntegrationTest {
 
+  private static final String DOCUMENT_NUMBER = "692.265.440-42";
+
   @Autowired AccountRepository accountRepository;
 
   @Test
   public void shouldSaveAccount() throws Exception {
     JSONObject form = new JSONObject();
-    form.put("document_number", "692.265.440-42");
+    form.put("document_number", DOCUMENT_NUMBER);
 
     mockMvc
         .perform(

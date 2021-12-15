@@ -1,5 +1,6 @@
-package com.valaszek.bank;
+package com.valaszek.bank.entrypoint;
 
+import com.valaszek.bank.IntegrationTest;
 import com.valaszek.bank.account.dto.AccountDto;
 import com.valaszek.bank.account.model.AccountEntity;
 import com.valaszek.bank.account.repository.AccountRepository;
