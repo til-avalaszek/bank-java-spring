@@ -14,6 +14,7 @@ build:
 	./gradlew clean build
 
 c-build:
+	make build
 	docker build -t $(IMAGE_NAME):$(IMAGE_TAG) --build-arg SERVICE_NAME=$(SERVICE_NAME) .
 
 start:
