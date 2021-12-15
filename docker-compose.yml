@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3'
 
 services:
 
@@ -12,8 +12,6 @@ services:
       POSTGRES_PASSWORD: bank
       POSTGRES_DB: bank
       PGDATA: /var/lib/postgresql/data/pgdata
-#    networks:
-#      - bank-net
     volumes:
       - ./docker/configuration/postgresql:/docker-entrypoint-initdb.d/
 
@@ -23,20 +21,11 @@ services:
     ports:
       - 5433:8080
 
-  # Rodar applicacao em container também
-#  bank-java-spring:
-#    build: .
-#    depends_on:
-#      - database
-#    links:
-#      - "database:database"
-#    networks:
-#      - bank-net
-#    ports:
-#      - 8080:8080
-#    environment:
-#      - "SPRING_PROFILES_ACTIVE=docker"
-#
-#networks:
-#  bank-net:
-#    driver: bridge
+  bank-java-spring:
+    image: valaszek/bank:latest
+    ports:
+      - 8080:8080
+    environment:
+      - "SPRING_PROFILES_ACTIVE=docker"
+    depends_on:
+      - database
