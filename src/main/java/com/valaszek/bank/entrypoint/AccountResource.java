@@ -53,17 +53,4 @@ public class AccountResource {
     }
   }
 
-  //    @GetMapping()
-  //    public ResponseEntity<List<AccountResponse>> findAll() {
-  //      try {
-  //        List<Account> accounts = accountService.findAll();
-  //
-  //        if (accounts.isEmpty()) {
-  //          return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-  //        }
-  //        return new ResponseEntity<>(accounts, HttpStatus.OK);
-  //      } catch (Exception e) {
-  //        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-  //      }
-  //    }
 }
